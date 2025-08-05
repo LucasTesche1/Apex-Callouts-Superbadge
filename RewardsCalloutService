@@ -1,0 +1,23 @@
+public class RewardsCalloutService{
+
+    public static Integer submitUsersForRewardCallout(String jsonBody) {
+        //Set Endpoint from Named Credential                
+        HttpRequest req = new HttpRequest();
+        request.setEndpoint('callout:BalancedLiving/rewards');
+        request.setMethod('POST');
+        request.setHeader('Context-Type', 'application/json');
+        request.setBody(jsonBody);
+        
+        Http http = new Http();       
+        HttpResponse res;
+        Integer statusCode;
+        
+        //Make HTTP Callout
+        
+        
+          
+        
+        //Update to return response status code
+        return 200;    
+    }
+}
