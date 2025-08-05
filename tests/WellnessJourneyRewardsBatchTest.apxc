@@ -12,7 +12,7 @@ public class WellnessJourneyRewardsBatchTest {
             TimeZoneSidKey = 'America/Los_Angeles',
             LocaleSidKey = 'en_US',
             EmailEncodingKey = 'UTF-8',
-            ProfileId = [SELECT Id FROM Profile WHERE Name='Standard User' LIMIT 1].Id,            
+            ProfileId = UserInfo.getProfileId(),            
             LanguageLocaleKey = 'en_US'        
         );
         insert testUser1;
@@ -27,7 +27,7 @@ public class WellnessJourneyRewardsBatchTest {
             TimeZoneSidKey = 'America/Los_Angeles',
             LocaleSidKey = 'en_US',
             EmailEncodingKey = 'UTF-8',
-            ProfileId = [SELECT Id FROM Profile WHERE Name='Standard User' LIMIT 1].Id,
+            ProfileId = UserInfo.getProfileId(),
             LanguageLocaleKey = 'en_US'
         );
         insert testUser2;
