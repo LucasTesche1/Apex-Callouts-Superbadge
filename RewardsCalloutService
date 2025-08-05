@@ -3,10 +3,10 @@ public class RewardsCalloutService{
     public static Integer submitUsersForRewardCallout(String jsonBody) {
         //Configuração de Endpoint
         HttpRequest req = new HttpRequest();
-        request.setEndpoint('callout:BalancedLiving/rewards');
-        request.setMethod('POST');
-        request.setHeader('Context-Type', 'application/json');
-        request.setBody(jsonBody);
+        req.setEndpoint('callout:BalancedLiving/rewards');
+        req.setMethod('POST');
+        req.setHeader('Context-Type', 'application/json');
+        req.setBody(jsonBody);
         
         Http http = new Http();       
         HttpResponse res;
@@ -15,7 +15,7 @@ public class RewardsCalloutService{
         //Chamada HTTP        
         try{
             res = http.send(req);
-            statusCode = req.getStatusCode();
+            statusCode = res.getStatusCode();
             System.debug('Response Status: ' + statusCode);
             System.debug('Response Body: ' + res.getBody());            
         }catch (Exception e){
