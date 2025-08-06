@@ -7,14 +7,14 @@ private class BillingCalloutServiceTest {
         project.Amount__c = 100.00;
         insert project;
         
-        Test.starTest();        
+        Test.startTest();        
         //define o mock
-        Test.setMock(WebServiceMock, new BillingCalloutServiceMock());
+        Test.setMock(WebServiceMock.class, new BillingCalloutServiceMock());
         //chama o método
-        AccessibilityProjectBilling.callBillingService(projectId, project.Amount__c);        
+        AccessibilityProjectBilling.callBillingService(project.Id, project.Amount__c);        
         Test.stopTest();
         
-        project = [SELECT Status__c FROM Accessibility_Project__c WHERE Id = :projectId];
+        project = [SELECT Status__c FROM Accessibility_Project__c WHERE Id = :project.Id];
         System.assertEquals('Complete',project.Status__c,'Project should be Complete');
         
     }
